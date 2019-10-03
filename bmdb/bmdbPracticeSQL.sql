@@ -42,8 +42,15 @@ FROM credit c
         
 -- another way to join (not as common)
 select * from actor, credit
-	where actor.id = credit.ActorID;
-
+	where actor.id = credit.ActorID;    
+    
+-- example of unique constraint violation
+insert into movie (title, year, rating, director)
+	values ('Step Brothers', 1274, 'pg', 'dkel');
+    
+-- example of fk violation
+insert into credit (movieid, actorid, role)
+	values (99, 99, 'test');
         
 -- List all movie and actor fields 
 select *

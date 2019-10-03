@@ -61,6 +61,7 @@ select sum(total)
 select customerId, sum(total)
  from orders
  group by customerId;
+ -- having sum(total) > 1000;
   
 -- customer name and order total
 select c.name 'Cust. Name', 
