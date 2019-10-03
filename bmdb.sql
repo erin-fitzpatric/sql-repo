@@ -27,9 +27,11 @@ create table actor (
 
 Insert into actor (firstName, lastName, gender, birthDate)
 values 
-	('Harrison', 'Ford', 'Male', '1942-07-13'), -- date is YYYY-MM-DD
-	('Jeff', 'Goldblum', 'Male', '1952-10-22'),
-    ('Will', 'Ferrell', 'Male', '1967-07-16');
+	('Harrison ', 'Ford', 'Male', '1942-07-13'), -- date is YYYY-MM-DD
+	('Jeff ', 'Goldblum', 'Male', '1952-10-22'),
+    ('Will ', 'Ferrell', 'Male', '1967-07-16'),
+    ('Carrie ', 'Fisher', 'Female', '1956-12-27'),
+    ('Mark ', 'Hamill', 'Male', '1951-09-25');
     
 -- INSERT MORE ACTORS HERE
 
@@ -50,11 +52,8 @@ Insert into credit (movieID, actorID, role)
 values 
 	(1, 1, 'Han Solo'),
     (2, 3, 'Brennan Huff'),
-    (3, 2, 'Dr. Ian Malcolm');
+    (3, 2, 'Dr. Ian Malcolm'),
+    (1, 5, 'Luke Skywalker'),
+    (1, 4, 'Leia Organa');
+    
 -- INSERT MORE CREDIT HERE
-
--- HOMEWORK
--- 1. select * from movie;
--- 2. select * from actor;
---
-select * from credit; 
