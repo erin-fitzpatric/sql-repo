@@ -14,7 +14,14 @@ create table movie (
  values 
 (1, 'Star Wars: A New Hope', 'PG', 1977, 'George Lucas'),
 (2, 'Step Brothers', 'Unrated', 2008, 'Adam McKay'),
-(3, 'Jurassic Park', 'PG-13', 1993, 'Steven Spielberg');
+(3, 'Jurassic Park', 'PG-13', 1993, 'Steven Spielberg'),
+(4, 'Joker', 'R', 2019, 'Todd Phillips'),
+(5, 'La La Land', 'PG-13', 2016, 'Damien Chazelle'),
+(6, 'The Dark Night', 'PG-13', 2008, 'Christopher Nolan'),
+(7, 'Superbad', 'R', 2007, 'Greg Mottola'),
+(8, 'Pulp Fiction', 'R', 1994, 'Quentin Tarantino'),
+(9, 'The Godfather', 'R', 1972, 'Francis Ford Coppola'),
+(10, 'The Matrix', 'R', 1999, 'Lilly Wachowski and Lana Wachowski');
  -- INSERT MORE MOVIES HERE
 
 create table actor (
@@ -32,7 +39,12 @@ values
 	(2, 'Jeff', 'Goldblum', 'Male', '1952-10-22'),
     (3, 'Will', 'Ferrell', 'Male', '1967-07-16'),
     (4, 'Carrie', 'Fisher', 'Female', '1956-12-27'),
-    (5, 'Mark', 'Hamill', 'Male', '1951-09-25');
+    (5, 'Mark', 'Hamill', 'Male', '1951-09-25'),
+    (6,
+    (7,
+    (8,
+    (9,
+    (10,										);
     
 -- INSERT MORE ACTORS HERE
 

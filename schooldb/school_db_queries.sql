@@ -52,3 +52,23 @@ select count(*) as 'Math' from course
 where subject = 'math';
 
 -- Inner join of all 3 (student, enrolled, course)
+select * 
+	from student s
+		join enrolled e
+			on e.studentID = s.id
+		join course c
+			on e.courseID = c.id;
+            
+-- Another way to Inner join all 3
+select *
+from enrolled e
+    join course c on c.ID = e.courseID
+    join student s on s.ID = e.studentID;
+    
+-- all students plus enrollments
+select s.id, firstName, lastname, e.studentID, e.courseID, e.grade, c.name
+	from student s
+	left join enrolled e
+		on e.studentID = s.id
+	left join course c
+		on e.courseID = c.id;

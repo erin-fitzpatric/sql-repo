@@ -1,0 +1,5 @@
+-- How many total stuffies
+-- How many red stuffies
+-- How many stuffies per color?
+-- How many total limbs?
+-- What stuffy has the most limbs?
