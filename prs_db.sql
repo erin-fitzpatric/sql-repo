@@ -1,7 +1,7 @@
 -- CONNECT TO 
-drop database if exists prs_db_create;
-create database prs_db_create;
-use prs_db_create;
+drop database if exists prs;
+create database prs;
+use prs;
 
 -- CREATE TABLE
 create table user
@@ -70,6 +70,17 @@ create table product
      -- ENTER CONSTRAINT HERE
      constraint vendor_part unique (VendorID, PartNumber)
 );
+
+create table lineItem (
+    id          int     primary key auto_increment not null,
+    requestID   int     not null,
+    productID   int     not null,
+    quantity    int     not null,
+        
+        foreign key (productID) references product(id),
+        foreign key (requestID) references request(id),
+            constraint req_pdt unique (requestID, productID)
+    );
  
 Insert into user (ID, UserName, Password, FirstName, LastName, PhoneNumber, Email, IsReviewer, IsAdmin)
  values 
@@ -82,10 +93,10 @@ Insert into vendor (ID, Code, Name, Address, City, State, Zip, PhoneNumber, Emai
 
 Insert into product (ID, VendorID, PartNumber, Name, Price, Unit, PhotoPath)
  values 
-(1, 1, 'bl-02', 'balloon', 9.99, '6 per box', 'C:\Users\MAX-Student\Pictures'),
-(2, 1, 'tk-007', 'tank', 999.99, '1 per shipment', 'C:\Users\MAX-Student\Pictures');
+(1, 1, 'bl-02', 'balloon', 9.99, '6 per box', 'C:\Users\MAX-Student\Pictures\one'),
+(2, 1, 'tk-007', 'tank', 999.99, '1 per shipment', 'C:\Users\MAX-Student\Pictures\two');
 
 -- CREATE USER
-DROP USER IF EXISTS prs_db_create_user@localhost;
-CREATE USER prs_db_create_user@localhost IDENTIFIED BY 'sesame';
-GRANT SELECT, INSERT, DELETE, UPDATE ON prs_db_create.* TO prs_db_create_user@localhost;
+DROP USER IF EXISTS prs_user@localhost;
+CREATE USER prs_user@localhost IDENTIFIED BY 'sesame';
+GRANT SELECT, INSERT, DELETE, UPDATE ON prs.* TO prs_user@localhost;

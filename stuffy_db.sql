@@ -36,6 +36,7 @@ insert into stuffy (id, type, color, size, limbs)
         (8, 'bigolfish', 'blue', 'xl', 3),
         (9, 'scarysquirrel', 'runnerred', 's', 5),
         (10, 'frog', 'green', 'm', 4);
-        
+     
+DROP USER IF EXISTS stuffy_user@localhost;     
 CREATE USER stuffy_user@localhost IDENTIFIED BY 'sesame';
-GRANT SELECT, INSERT, DELETE, UPDATE ON stuffy.* TO stuffy_user@localhost;    
+GRANT SELECT, INSERT, DELETE, UPDATE ON stuffy_db.* TO stuffy_user@localhost;    
